@@ -13,6 +13,17 @@ const Tablar = (konu) => {
   //   <div class="tab">teknoloji</div>
   // </div>
   //
+  const topicsDiv = document.createElement('div');
+  topicsDiv.className = 'topics';
+  konular.forEach((konu) => {
+    const tabDiv = document.createElement('div');
+    tabDiv.className = 'tab';
+    tabDiv.textContent = konu;
+    topicsDiv.appendChild(tabDiv);
+  });
+  return topicsDiv;
+
+
 }
 
 const tabEkleyici = (secici) => {
@@ -23,6 +34,21 @@ const tabEkleyici = (secici) => {
   // Yanıtın içindeki konu dizisini bulun ve Tablar bileşenini kullanarak tabları oluşturun.
   // Tabları, fonksiyona iletilen seçiciyle eşleşen DOM'daki öğeye ekleyin.
   //
+  const hedefElement = document.querySelector(secici);
+  if (hedefElement) {
+    fetch('http://localhost:5001/api/konular')
+    .then((response) => response.json())
+    .then((veri) => {
+      const konular = veri.konular;
+      const tablar = Tablar(konular);
+      hedefElement.appendChild(tablar);
+    })
+    .catch((hata) => {
+      console.error('API isteği sırasında hata oluştu:', hata);
+    });
+  } else {
+    console.error("Belirtilen seçici ile eşleşen bir DOM öğesi bulunamadı.");
+  }
 }
 
 export { Tablar, tabEkleyici }
