@@ -10,9 +10,9 @@ Bu sprint mücadelesi sırasında işbirliği yapmanıza izin verilmez.
 
 ### Proje Kurulumu
 
-* [ ] Bu projenyi forklayarak bir kopyasını oluşturun.
-* [ ] Reponun kendi versiyonunuzu klonlayın.
-* [ ] Commitinizi pushlayın: `git push origin main`.
+* [+] Bu projenyi forklayarak bir kopyasını oluşturun.
+* [+] Reponun kendi versiyonunuzu klonlayın.
+* [+] Commitinizi pushlayın: `git push origin main`.
 
 ## Proje Açıklaması
 
@@ -26,17 +26,17 @@ Aşağıda listelenen minimum uygulanabilir ürün (MVP) spesifikasyonlarını k
 
 ### Detaylar
 
-- [ ] Komut satırınızla projenin kök dizinine gidin.
-- [ ] `package.json` dosyasında listelenen bağımlılıkları indirmek için `npm install` komutunu çalıştırın.
-- [ ] Projeyi derlemek ve sunmak için `npm start` komutunu çalıştırın.
-- [ ] Chrome'da `http://localhost:3000` konumuna gidin
-- [ ] Testleri çalıştırmak için ayrı bir terminalde `npm test` komutunu yazın.
+- [+] Komut satırınızla projenin kök dizinine gidin.
+- [+] `package.json` dosyasında listelenen bağımlılıkları indirmek için `npm install` komutunu çalıştırın.
+- [+] Projeyi derlemek ve sunmak için `npm start` komutunu çalıştırın.
+- [+] Chrome'da `http://localhost:3000` konumuna gidin
+- [+] Testleri çalıştırmak için ayrı bir terminalde `npm test` komutunu yazın.
 
 **MVP için adımlar:**
 
-- [ ] Adım 1 ve 2 `src/bileşenler/header.js` dosyasında açıklandı.
-- [ ] Adım 3 ve 4 `src/bileşenler/tabs.js` dosyasında açıklandı.
-- [ ] Adım 5 ve 6 `src/bileşenler/card.js` dosyasında açıklandı.
+- [+] Adım 1 ve 2 `src/bileşenler/header.js` dosyasında açıklandı.
+- [+] Adım 3 ve 4 `src/bileşenler/tabs.js` dosyasında açıklandı.
+- [+] Adım 5 ve 6 `src/bileşenler/card.js` dosyasında açıklandı.
 
 **Önemli Notlar:**
 
@@ -53,7 +53,12 @@ Aşağıda listelenen minimum uygulanabilir ürün (MVP) spesifikasyonlarını k
 Aşağıdaki soruları yanıtlayarak bu sprint'in kavramlarını anladığınızı gösterin. Her sorudan sonra yanıtlarınızı eklemek için bu belgeyi düzenleyin.
 
 1. DOM nedir?
+   Bir web sayfasinin her ogesine erisim ve manipulasyon imkani saglayan modeldir.
 2. Bir event nedir?
+   Web sayfasinda bir kullanicinin bir butona tiklamasi, bir klavye tusuna basmasi veya fareyi hareket ettirmesi gibi etkilesimler herbiri bir event tetikler, bu etkilesimlerin tamamina event denir.
 3. Bir event dinleyici(listener) nedir?
+   Belirli bir event'i bekleyen ve event gerceklestirildiginde belirli bir islevi cagiran islevlerdir.
 4. Neden bir NodeList'i Array'e dönüştürelim??
+   Dizi islevlerinin kullanim yetenegi ve dongulerde dorudan dolasilabilinmesi.
 5. Bileşen nedir?
+   Daha kucuk ve daha yonetilebilir parcalara bolunmus yeniden kullanilabilir uygulama parcalaridir.
