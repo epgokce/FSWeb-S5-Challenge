@@ -17,6 +17,40 @@ const Card = (makale) => {
   //   </div>
   // </div>
   //
+  const cardDiv = document.createElement('div');
+  cardDiv.className = 'card';
+  const headlineDiv = document.createElement('div');
+  headlineDiv.className = 'headline';
+  headlineDiv.textContent = makale.anabaslik;
+  const authorDiv = document.createElement('div');
+  authorDiv.className = 'author';
+  const imgContainerDiv = document.createElement('div');
+  imgContainerDiv.className = 'img-container';
+  const img = document.createElement('img');
+  img.src = makale.yazarFoto;
+  imgContainerDiv.appendChild(img);
+  authorDiv.appendChild(imgContainerDiv);
+  const authorSpan = document.createElement('span');
+  authorSpan.textContent = makale.yazarAdi + ' tarafından';
+  authorDiv.appendChild(authorSpan);
+  cardDiv.appendChild(headlineDiv);
+  cardDiv.appendChild(authorDiv);
+  cardDiv.addEventListener('click', () => {
+    console.log(makale.anabaslik);
+  });
+
+  return cardDiv;
+
+
+
+
+
+
+
+
+
+
+
 }
 
 const cardEkleyici = (secici) => {
@@ -28,6 +62,22 @@ const cardEkleyici = (secici) => {
   // Card bileşenini kullanarak yanıttaki her makale nesnesinden bir kart oluşturun.
   // Her cardı, fonksiyona iletilen seçiciyle eşleşen DOM'daki öğeye ekleyin.
   //
+  const hedefElement = document.querySelector(secici);
+  if (hedefElement) {
+    fetch('http://localhost:5001/api/makaleler')
+    .then((response) => response.json())
+    .then((veri) => {
+        makaleler.forEach((makale) => {
+          const kart = Card(makale);
+          hedefElement.appendChild(kart);
+        });
+      })
+      .catch((hata) => {
+        console.error('API isteği sırasında hata oluştu:', hata);
+      });
+  } else {
+    console.error("Belirtilen seçici ile eşleşen bir DOM öğesi bulunamadı.");
+  }
 }
 
 export { Card, cardEkleyici }
